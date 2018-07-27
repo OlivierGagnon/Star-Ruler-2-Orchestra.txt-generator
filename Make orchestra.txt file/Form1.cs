@@ -26,11 +26,15 @@ namespace Make_orchestra.txt_file
 
         private void removeCurrentItem()
         {
+            labelDone.Visible = false;
+            buttonExport.Enabled = true;
             listBoxSongList.Items.Remove(listBoxSongList.SelectedItem);
         }
 
         private void buttonAdd_Click(object sender, EventArgs e)
-        {
+        {        
+            labelDone.Visible = false;
+            buttonExport.Enabled = true;
             using (OpenFileDialog dialog = new OpenFileDialog())
             {
                 dialog.Multiselect = true;
@@ -55,13 +59,6 @@ namespace Make_orchestra.txt_file
 
         private void buttonExport_Click(object sender, EventArgs e)
         {
-        //Arrangement: Exploration1
-        //  Era: Exploration
-        //
-        //  Movement: Ambient
-        //      Track: data/music/exploration/drones.ogg
-        //      Volume: 1.0
-
             List<string> fileContent = new List<string>();
             int i = 0;
             foreach (string str in listBoxSongList.Items.Cast<String>().ToArray())
@@ -69,7 +66,6 @@ namespace Make_orchestra.txt_file
                 int lastElement = str.Split('\\').Length-1;
                 string filename = str.Split('\\')[lastElement];
                 fileContent.Add("Arrangement: Track #" + i);
-                //fileContent.Add("\tEra: Exploration");
                 fileContent.Add("\tMovement: Ambient");
                 fileContent.Add("\t\tTrack: data/music/" + filename);
                 fileContent.Add("\t\tVolume: 0.5");
