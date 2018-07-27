@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2042
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Make orchestra.txt file", "Make orchestra.txt file\Make orchestra.txt file.csproj", "{8C02089B-CE01-411E-BEBF-B33B889959AD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8C02089B-CE01-411E-BEBF-B33B889959AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C02089B-CE01-411E-BEBF-B33B889959AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C02089B-CE01-411E-BEBF-B33B889959AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C02089B-CE01-411E-BEBF-B33B889959AD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {78E460EF-EBAE-44AB-B0AB-29D1DDE0F37F}
+	EndGlobalSection
+EndGlobal
