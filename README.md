@@ -9,3 +9,9 @@ Source of the game is here: https://github.com/BlindMindStudios/StarRuler2-Sourc
 
 I spent some time to analyze the orchestra.txt and do some tests, and the way it's generated now is the most efficient way to make it.
 There used to be more stuff, but it's not implemented or doesn't work, so what actually works is what this program generates
+
+How to use:
+
+Open the program. Third tab to add ogg files to the playlist. Double click to remove. 4th tab to create orchestra.txt in the folder where this exe resides
+
+Copy everything to music folder under data in SR2 folder.
