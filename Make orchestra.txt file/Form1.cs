@@ -86,8 +86,36 @@ namespace Make_orchestra.txt_file
             foreach (string str in AmbientSongs)
             {
                 string AmbientFileName = str.Split('\\')[str.Split('\\').Length - 1];
-                string VictoryFilename = VictorySongs.Count == 0 ? AmbientFileName : VictorySongs[j].Split('\\')[VictorySongs[j].Split('\\').Length - 1];
-                string DefeatFilename = DefeatSongs.Count == 0 ? AmbientFileName : DefeatSongs[k].Split('\\')[DefeatSongs[k].Split('\\').Length - 1];
+                string VictoryFilename;
+                if (VictorySongs.Count > 0)
+                {
+                    int lastElement = VictorySongs[j].Split('\\').Length - 1;
+                    VictoryFilename = VictorySongs[j].Split('\\')[lastElement];
+                    j++;
+                    if (j == VictorySongs.Count)
+                    {
+                        j = 0;
+                    }
+                }
+                else
+                {
+                    VictoryFilename = AmbientFileName;
+                }
+                string DefeatFilename;
+                if (DefeatSongs.Count > 0)
+                {
+                    int lastElement = DefeatSongs[k].Split('\\').Length - 1;
+                    DefeatFilename = DefeatSongs[k].Split('\\')[lastElement];
+                    k++;
+                    if (k == DefeatSongs.Count)
+                    {
+                        k = 0;
+                    }
+                }
+                else
+                {
+                    DefeatFilename = AmbientFileName;
+                }
                 fileContent.Add("Arrangement: Track #" + i);
                 fileContent.Add("Movement: Victory");
                 fileContent.Add("\t\tTrack: data/music/" + VictoryFilename);
@@ -104,15 +132,6 @@ namespace Make_orchestra.txt_file
                 fileContent.Add("\t\tmin(0.25, 1.0 - (Victory.volume + Defeat.volume) * 0.5)");
                 fileContent.Add("");
                 i++;
-                if (j++ == VictorySongs.Count)
-                {
-                    j = 0;
-                }
-
-                if (k++ == DefeatSongs.Count)
-                {
-                    k = 0;
-                }
             }
             File.Delete("orchestra.txt");
             File.WriteAllLines("orchestra.txt", fileContent);
