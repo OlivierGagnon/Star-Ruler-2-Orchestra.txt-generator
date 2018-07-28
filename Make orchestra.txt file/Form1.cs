@@ -117,12 +117,12 @@ namespace Make_orchestra.txt_file
                     DefeatFilename = AmbientFileName;
                 }
                 fileContent.Add("Arrangement: Track #" + i);
-                fileContent.Add("Movement: Victory");
+                fileContent.Add("\tMovement: Victory");
                 fileContent.Add("\t\tTrack: data/music/" + VictoryFilename);
                 fileContent.Add("\t\tLoop: True");
                 fileContent.Add("\t\tVolume: Ambient.playing * 0.15 * (ships_destroyed.acc / (4 + ships_destroyed.acc))");
                 fileContent.Add("");
-                fileContent.Add("Movement: Defeat");
+                fileContent.Add("\tMovement: Defeat");
                 fileContent.Add("\t\tTrack: data/music/" + DefeatFilename);
                 fileContent.Add("\t\tLoop: True");
                 fileContent.Add("\t\tVolume: Ambient.playing * 0.25 * (ships_lost.acc / (4 + ships_lost.acc))");
