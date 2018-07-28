@@ -75,10 +75,6 @@ namespace Make_orchestra.txt_file
             List<string> VictorySongs = listBoxSongListVictory.Items.Cast<String>().ToList<String>();
             List<string> DefeatSongs = listBoxSongListDefeat.Items.Cast<String>().ToList<String>();
             List<string> AmbientSongs = listBoxSongListAmbient.Items.Cast<String>().ToList<String>();
-            int howManyAmbientSongs = AmbientSongs.Count;
-            int howManyVictorySongs = VictorySongs.Count;
-            int howManyDefeatSongs = DefeatSongs.Count;
-            Random random = new Random();
             List<string> fileContent = new List<string>();
             int i = 0;
             int j = 0;
