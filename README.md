@@ -17,3 +17,5 @@ Open the program. Third tab to add ogg files to the playlist. Double click to re
 6th tab to create orchestra.txt in the folder where this exe resides
 
 Copy everything to music folder under data in SR2 folder.
+
+Screenshot: https://imgur.com/a/GytrYhZ
