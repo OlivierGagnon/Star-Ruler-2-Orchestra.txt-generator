@@ -12,6 +12,8 @@ There used to be more stuff, but it's not implemented or doesn't work, so what a
 
 How to use:
 
-Open the program. Third tab to add ogg files to the playlist. Double click to remove. 4th tab to create orchestra.txt in the folder where this exe resides
+Open the program. Third tab to add ogg files to the playlist. Double click to remove. 4th tab for adding victory songs, 5th for defeat songs. These will play when you're in an epic battle and either you or your opponent has most ships killed.
+
+6th tab to create orchestra.txt in the folder where this exe resides
 
 Copy everything to music folder under data in SR2 folder.
