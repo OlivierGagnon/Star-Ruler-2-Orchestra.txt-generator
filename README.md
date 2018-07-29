@@ -19,3 +19,7 @@ Open the program. Third tab to add ogg files to the playlist. Double click to re
 Copy everything to music folder under data in SR2 folder.
 
 Screenshot: https://imgur.com/a/GytrYhZ
+
+IF YOUR GAME CRASHES A LOT AFTER ADDING YOUR MUSIC:
+Game seems picky about ogg encoding and it may result in lots of crashing.
+re-encode all your ogg files with winlame static bitrate, should fix the issue
