@@ -34,24 +34,26 @@ namespace Make_orchestra.txt_file
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.labelTitle = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.linkLabelProtipAmbient = new System.Windows.Forms.LinkLabel();
+            this.buttonShuffleAmbient = new System.Windows.Forms.Button();
+            this.linkLabelAmbient = new System.Windows.Forms.LinkLabel();
             this.buttonRemoveAmbient = new System.Windows.Forms.Button();
             this.buttonAddAmbient = new System.Windows.Forms.Button();
             this.listBoxSongListAmbient = new System.Windows.Forms.ListBox();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.buttonShuffleVictory = new System.Windows.Forms.Button();
             this.buttonRemoveVictory = new System.Windows.Forms.Button();
             this.buttonAddVictory = new System.Windows.Forms.Button();
             this.listBoxSongListVictory = new System.Windows.Forms.ListBox();
             this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.buttonShuffleDefeat = new System.Windows.Forms.Button();
             this.buttonRemoveDefeat = new System.Windows.Forms.Button();
             this.buttonAddDefeat = new System.Windows.Forms.Button();
             this.listBoxSongListDefeat = new System.Windows.Forms.ListBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.labelDone = new System.Windows.Forms.Label();
             this.buttonExport = new System.Windows.Forms.Button();
-            this.buttonShuffleAmbient = new System.Windows.Forms.Button();
-            this.buttonShuffleVictory = new System.Windows.Forms.Button();
-            this.buttonShuffleDefeat = new System.Windows.Forms.Button();
+            this.linkLabelVictory = new System.Windows.Forms.LinkLabel();
+            this.linkLabelDefeat = new System.Windows.Forms.LinkLabel();
             this.tabControlVictory.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -119,7 +121,7 @@ namespace Make_orchestra.txt_file
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.buttonShuffleAmbient);
-            this.tabPage3.Controls.Add(this.linkLabelProtipAmbient);
+            this.tabPage3.Controls.Add(this.linkLabelAmbient);
             this.tabPage3.Controls.Add(this.buttonRemoveAmbient);
             this.tabPage3.Controls.Add(this.buttonAddAmbient);
             this.tabPage3.Controls.Add(this.listBoxSongListAmbient);
@@ -131,16 +133,26 @@ namespace Make_orchestra.txt_file
             this.tabPage3.Text = "Playlist (Ambient)";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // linkLabelProtipAmbient
+            // buttonShuffleAmbient
             // 
-            this.linkLabelProtipAmbient.AutoSize = true;
-            this.linkLabelProtipAmbient.Location = new System.Drawing.Point(544, 104);
-            this.linkLabelProtipAmbient.Name = "linkLabelProtipAmbient";
-            this.linkLabelProtipAmbient.Size = new System.Drawing.Size(47, 13);
-            this.linkLabelProtipAmbient.TabIndex = 3;
-            this.linkLabelProtipAmbient.TabStop = true;
-            this.linkLabelProtipAmbient.Text = "PROTIP";
-            this.linkLabelProtipAmbient.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelProtip_LinkClicked);
+            this.buttonShuffleAmbient.Location = new System.Drawing.Point(531, 120);
+            this.buttonShuffleAmbient.Name = "buttonShuffleAmbient";
+            this.buttonShuffleAmbient.Size = new System.Drawing.Size(75, 23);
+            this.buttonShuffleAmbient.TabIndex = 4;
+            this.buttonShuffleAmbient.Text = "Shuffle";
+            this.buttonShuffleAmbient.UseVisualStyleBackColor = true;
+            this.buttonShuffleAmbient.Click += new System.EventHandler(this.buttonShuffleAmbient_Click);
+            // 
+            // linkLabelAmbient
+            // 
+            this.linkLabelAmbient.AutoSize = true;
+            this.linkLabelAmbient.Location = new System.Drawing.Point(537, 104);
+            this.linkLabelAmbient.Name = "linkLabelAmbient";
+            this.linkLabelAmbient.Size = new System.Drawing.Size(62, 13);
+            this.linkLabelAmbient.TabIndex = 3;
+            this.linkLabelAmbient.TabStop = true;
+            this.linkLabelAmbient.Text = "Explanation";
+            this.linkLabelAmbient.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelProtip_LinkClicked);
             // 
             // buttonRemoveAmbient
             // 
@@ -174,6 +186,7 @@ namespace Make_orchestra.txt_file
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.linkLabelVictory);
             this.tabPage5.Controls.Add(this.buttonShuffleVictory);
             this.tabPage5.Controls.Add(this.buttonRemoveVictory);
             this.tabPage5.Controls.Add(this.buttonAddVictory);
@@ -185,6 +198,16 @@ namespace Make_orchestra.txt_file
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Playlist (Victory)";
             this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // buttonShuffleVictory
+            // 
+            this.buttonShuffleVictory.Location = new System.Drawing.Point(531, 120);
+            this.buttonShuffleVictory.Name = "buttonShuffleVictory";
+            this.buttonShuffleVictory.Size = new System.Drawing.Size(75, 23);
+            this.buttonShuffleVictory.TabIndex = 7;
+            this.buttonShuffleVictory.Text = "Shuffle";
+            this.buttonShuffleVictory.UseVisualStyleBackColor = true;
+            this.buttonShuffleVictory.Click += new System.EventHandler(this.buttonShuffleVictory_Click);
             // 
             // buttonRemoveVictory
             // 
@@ -218,6 +241,7 @@ namespace Make_orchestra.txt_file
             // 
             // tabPage6
             // 
+            this.tabPage6.Controls.Add(this.linkLabelDefeat);
             this.tabPage6.Controls.Add(this.buttonShuffleDefeat);
             this.tabPage6.Controls.Add(this.buttonRemoveDefeat);
             this.tabPage6.Controls.Add(this.buttonAddDefeat);
@@ -229,6 +253,16 @@ namespace Make_orchestra.txt_file
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "Playlist (Defeat)";
             this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // buttonShuffleDefeat
+            // 
+            this.buttonShuffleDefeat.Location = new System.Drawing.Point(531, 120);
+            this.buttonShuffleDefeat.Name = "buttonShuffleDefeat";
+            this.buttonShuffleDefeat.Size = new System.Drawing.Size(75, 23);
+            this.buttonShuffleDefeat.TabIndex = 7;
+            this.buttonShuffleDefeat.Text = "Shuffle";
+            this.buttonShuffleDefeat.UseVisualStyleBackColor = true;
+            this.buttonShuffleDefeat.Click += new System.EventHandler(this.buttonShuffleDefeat_Click);
             // 
             // buttonRemoveDefeat
             // 
@@ -293,35 +327,27 @@ namespace Make_orchestra.txt_file
             this.buttonExport.UseVisualStyleBackColor = true;
             this.buttonExport.Click += new System.EventHandler(this.buttonExport_Click);
             // 
-            // buttonShuffleAmbient
+            // linkLabelVictory
             // 
-            this.buttonShuffleAmbient.Location = new System.Drawing.Point(531, 120);
-            this.buttonShuffleAmbient.Name = "buttonShuffleAmbient";
-            this.buttonShuffleAmbient.Size = new System.Drawing.Size(75, 23);
-            this.buttonShuffleAmbient.TabIndex = 4;
-            this.buttonShuffleAmbient.Text = "Shuffle";
-            this.buttonShuffleAmbient.UseVisualStyleBackColor = true;
-            this.buttonShuffleAmbient.Click += new System.EventHandler(this.buttonShuffleAmbient_Click);
+            this.linkLabelVictory.AutoSize = true;
+            this.linkLabelVictory.Location = new System.Drawing.Point(537, 104);
+            this.linkLabelVictory.Name = "linkLabelVictory";
+            this.linkLabelVictory.Size = new System.Drawing.Size(62, 13);
+            this.linkLabelVictory.TabIndex = 8;
+            this.linkLabelVictory.TabStop = true;
+            this.linkLabelVictory.Text = "Explanation";
+            this.linkLabelVictory.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelVictory_LinkClicked);
             // 
-            // buttonShuffleVictory
+            // linkLabelDefeat
             // 
-            this.buttonShuffleVictory.Location = new System.Drawing.Point(531, 120);
-            this.buttonShuffleVictory.Name = "buttonShuffleVictory";
-            this.buttonShuffleVictory.Size = new System.Drawing.Size(75, 23);
-            this.buttonShuffleVictory.TabIndex = 7;
-            this.buttonShuffleVictory.Text = "Shuffle";
-            this.buttonShuffleVictory.UseVisualStyleBackColor = true;
-            this.buttonShuffleVictory.Click += new System.EventHandler(this.buttonShuffleVictory_Click);
-            // 
-            // buttonShuffleDefeat
-            // 
-            this.buttonShuffleDefeat.Location = new System.Drawing.Point(531, 120);
-            this.buttonShuffleDefeat.Name = "buttonShuffleDefeat";
-            this.buttonShuffleDefeat.Size = new System.Drawing.Size(75, 23);
-            this.buttonShuffleDefeat.TabIndex = 7;
-            this.buttonShuffleDefeat.Text = "Shuffle";
-            this.buttonShuffleDefeat.UseVisualStyleBackColor = true;
-            this.buttonShuffleDefeat.Click += new System.EventHandler(this.buttonShuffleDefeat_Click);
+            this.linkLabelDefeat.AutoSize = true;
+            this.linkLabelDefeat.Location = new System.Drawing.Point(537, 104);
+            this.linkLabelDefeat.Name = "linkLabelDefeat";
+            this.linkLabelDefeat.Size = new System.Drawing.Size(62, 13);
+            this.linkLabelDefeat.TabIndex = 8;
+            this.linkLabelDefeat.TabStop = true;
+            this.linkLabelDefeat.Text = "Explanation";
+            this.linkLabelDefeat.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelDefeat_LinkClicked);
             // 
             // Form1
             // 
@@ -339,7 +365,9 @@ namespace Make_orchestra.txt_file
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             this.tabPage5.ResumeLayout(false);
+            this.tabPage5.PerformLayout();
             this.tabPage6.ResumeLayout(false);
+            this.tabPage6.PerformLayout();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
             this.ResumeLayout(false);
@@ -360,7 +388,7 @@ namespace Make_orchestra.txt_file
         private System.Windows.Forms.Button buttonExport;
         private System.Windows.Forms.Label labelWelcome;
         private System.Windows.Forms.Label labelTitle;
-        private System.Windows.Forms.LinkLabel linkLabelProtipAmbient;
+        private System.Windows.Forms.LinkLabel linkLabelAmbient;
         private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.Button buttonRemoveVictory;
         private System.Windows.Forms.Button buttonAddVictory;
@@ -372,6 +400,8 @@ namespace Make_orchestra.txt_file
         private System.Windows.Forms.Button buttonShuffleAmbient;
         private System.Windows.Forms.Button buttonShuffleVictory;
         private System.Windows.Forms.Button buttonShuffleDefeat;
+        private System.Windows.Forms.LinkLabel linkLabelVictory;
+        private System.Windows.Forms.LinkLabel linkLabelDefeat;
     }
 }
 
