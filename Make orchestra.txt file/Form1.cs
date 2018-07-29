@@ -21,7 +21,7 @@ namespace Make_orchestra.txt_file
                 "(you might need to manually create this folder)" + Environment.NewLine +
                 "" + Environment.NewLine +
                 "Add Ambient music, then victory/defeat music if you want" + Environment.NewLine +
-                "Everything will be randomized. If no victory/defeat, it will be randomized with ambient";
+                "Everything will be randomized. If no victory/defeat, it will not play";
         }
 
         private void removeCurrentItem(ListBox listbox)
@@ -75,6 +75,10 @@ namespace Make_orchestra.txt_file
             List<string> VictorySongs = listBoxSongListVictory.Items.Cast<String>().ToList<String>();
             List<string> DefeatSongs = listBoxSongListDefeat.Items.Cast<String>().ToList<String>();
             List<string> AmbientSongs = listBoxSongListAmbient.Items.Cast<String>().ToList<String>();
+            int howManyAmbientSongs = AmbientSongs.Count;
+            int howManyVictorySongs = VictorySongs.Count;
+            int howManyDefeatSongs = DefeatSongs.Count;
+            Random random = new Random();
             List<string> fileContent = new List<string>();
             int i = 0;
             int j = 0;
@@ -115,16 +119,22 @@ namespace Make_orchestra.txt_file
                 fileContent.Add("Arrangement: Exploration" + i);
                 fileContent.Add("\tEra: Exploration");
                 fileContent.Add("");
-                fileContent.Add("\tMovement: Victory");
-                fileContent.Add("\t\tTrack: data/music/" + VictoryFilename);
-                fileContent.Add("\t\tLoop: true");
-                fileContent.Add("\t\tVolume: Ambient.playing * 0.15 * (ships_destroyed.acc / (4 + ships_destroyed.acc))");
-                fileContent.Add("");
-                fileContent.Add("\tMovement: Defeat");
-                fileContent.Add("\t\tTrack: data/music/" + DefeatFilename);
-                fileContent.Add("\t\tLoop: true");
-                fileContent.Add("\t\tVolume: Ambient.playing * 0.25 * (ships_lost.acc / (4 + ships_lost.acc))");
-                fileContent.Add("");
+                if (VictorySongs.Count > 0)
+                {
+                    fileContent.Add("\tMovement: Victory");
+                    fileContent.Add("\t\tTrack: data/music/" + VictoryFilename);
+                    fileContent.Add("\t\tLoop: true");
+                    fileContent.Add("\t\tVolume: Ambient.playing * 0.15 * (ships_destroyed.acc / (4 + ships_destroyed.acc))");
+                    fileContent.Add("");
+                }
+                if (DefeatSongs.Count > 0)
+                {
+                    fileContent.Add("\tMovement: Defeat");
+                    fileContent.Add("\t\tTrack: data/music/" + DefeatFilename);
+                    fileContent.Add("\t\tLoop: true");
+                    fileContent.Add("\t\tVolume: Ambient.playing * 0.25 * (ships_lost.acc / (4 + ships_lost.acc))");
+                    fileContent.Add("");
+                }
                 fileContent.Add("\tMovement: Ambient");
                 fileContent.Add("\t\tTrack: data/music/" + AmbientFileName);
                 fileContent.Add("\t\tVolume: min(0.25, 1.0 - (Victory.volume + Defeat.volume) * 0.5)");
@@ -137,14 +147,30 @@ namespace Make_orchestra.txt_file
             buttonExport.Enabled = false;
         }
 
+        private void linkLabelProtip_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            MessageBox.Show("This is the music that plays during the regular game. It'll go thru them all.", "Ambient Music");
+        }
+
+        private void linkLabelVictory_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            MessageBox.Show("While your ships are in battle and you're destroying a lot of ships," + Environment.NewLine +
+                "this music will play on top of the Ambient music" + Environment.NewLine +
+                "It'll start out quiet, and get louder as you destroy more ships" + Environment.NewLine +
+                "Leave this empty to disable", "Victory Music");
+        }
+
+        private void linkLabelDefeat_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            MessageBox.Show("While your ships are in battle and you're losing a lot of ships," + Environment.NewLine +
+                "this music will play on top of the Ambient music" + Environment.NewLine +
+                "It'll start out quiet, and get louder as you lose more ships" + Environment.NewLine +
+                "Leave this empty to disable", "Defeat Music");
+        }
+
         private void buttonExport_Click(object sender, EventArgs e)
         {
             Export();
-        }
-
-        private void linkLabelProtip_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            MessageBox.Show("Double click an item to remove it", "PROTIP");
         }
 
         private void buttonAdd_Click(object sender, EventArgs e)
